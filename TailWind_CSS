@@ -1,1 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Workora | Employee Burnout & Attrition Prediction</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-inter bg-[#07111f] text-white min-h-screen overflow-x-hidden">
+
+    <!--BACKGROUND-->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+
+        <div class="
+            absolute
+            -top-32
+            -left-32
+            sm:-top-40
+            sm:-left-40
+            w-72
+            h-72
+            sm:w-96
+            sm:h-96
+            lg:w-[500px]
+            lg:h-[500px]
+            bg-purple-700/20
+            rounded-full
+            blur-[100px]
+            sm:blur-[120px]
+        "></div>
+
+        <div class="
+            absolute
+            top-1/3
+            -right-32
+            sm:-right-40
+            w-72
+            h-72
+            sm:w-96
+            sm:h-96
+            bg-cyan-500/15
+            rounded-full
+            blur-[100px]
+            sm:blur-[120px]
+        "></div>
+
+        <div class="
+            absolute
+            bottom-[-150px]
+            left-1/3
+            w-72
+            h-72
+            sm:w-96
+            sm:h-96
+            bg-indigo-600/15
+            rounded-full
+            blur-[100px]
+            sm:blur-[120px]
+        "></div>
+
+    </div>
+
+
+    <!--NAVBAR -->
+    <nav class="
+        sticky
+        top-0
+        z-50
+        border-b
+        border-white/10
+        bg-[#07111f]/80
+        backdrop-blur-xl
+    ">
+
+        <div class="
+            max-w-7xl
+            mx-auto
+            px-4
+            sm:px-6
+            lg:px-8
+            py-3
+            sm:py-4
+        ">
+
+            <div class="flex items-center justify-between">
+
+                <!-- LOGO -->
+                <div class="flex items-center gap-2 sm:gap-3">
+
+                    <div class="
+                        w-9
+                        h-9
+                        sm:w-10
+                        sm:h-10
+                        rounded-xl
+                        bg-gradient-to-br
+                        from-purple-500
+                        to-cyan-400
+                        flex
+                        items-center
+                        justify-center
+                        shadow-lg
+                        shadow-purple-500/20
+                    ">
+                        <span class="font-bold text-base sm:text-lg">
+                            W
+                        </span>
+                    </div>
+
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-bold">
+                            Workora
+                        </h1>
+
+                        <p class="hidden sm:block text-[10px] text-gray-400">
+                            Workforce Intelligence
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- DESKTOP NAV -->
+                <div class="
+                    hidden
+                    md:flex
+                    items-center
+                    gap-5
+                    lg:gap-8
+                    text-sm
+                    text-gray-300
+                ">
+
+                    <a href="#home" class="hover:text-white transition">
+                        Home
+                    </a>
+
+                    <a href="#insights" class="hover:text-white transition">
+                        Insights
+                    </a>
+
+                    <a href="#factors" class="hover:text-white transition">
+                        Factors
+                    </a>
+
+                    <a href="#process" class="hover:text-white transition">
+                        How It Works
+                    </a>
+
+                </div>
+                <!-- DESKTOP BUTTON -->
+                <button class="
+                    hidden
+                    sm:block
+                    px-4
+                    lg:px-5
+                    py-2
+                    lg:py-2.5
+                    rounded-xl
+                    bg-white/10
+                    border
+                    border-white/10
+                    hover:bg-white/15
+                    transition
+                    text-xs
+                    lg:text-sm
+                    font-medium
+                ">
+                    Explore System
+                </button>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button class="
+                    md:hidden
+                    w-9
+                    h-9
+                    rounded-lg
+                    bg-white/5
+                    border
+                    border-white/10
+                    text-gray-300
+                    flex
+                    items-center
+                    justify-center
+                ">
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+    </nav>
+    <!--HERO-->
+    <section id="home" class="
+        max-w-7xl
+        mx-auto
+        px-4
+        sm:px-6
+        lg:px-8
+        pt-12
+        sm:pt-16
+        lg:pt-24
+        pb-14
+        sm:pb-20
+        lg:pb-24
+    ">
+        <div class="
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            gap-10
+            sm:gap-12
+            lg:gap-16
+            items-center
+        ">
+
+            <!-- HERO TEXT -->
+            <div>
+                <div class="
+                    inline-flex
+                    items-center
+                    gap-2
+                    px-3
+                    py-1.5
+                    rounded-full
+                    border
+                    border-purple-400/20
+                    bg-purple-500/10
+                    text-purple-300
+                    text-[11px]
+                    sm:text-xs
+                    font-medium
+                    mb-5
+                    sm:mb-6
+                ">
+
+                    <span class="
+                        w-2
+                        h-2
+                        rounded-full
+                        bg-purple-400
+                        animate-pulse
+                    "></span>
+
+                    AI-Powered Workforce Analytics
+
+                </div>
+                <h2 class="
+                    text-3xl
+                    sm:text-4xl
+                    md:text-5xl
+                    lg:text-6xl
+                    font-extrabold
+                    leading-[1.1]
+                    tracking-tight
+                ">
+                    Understand Your
+
+                    <span class="
+                        block
+                        sm:inline
+                        bg-gradient-to-r
+                        from-purple-400
+                        via-fuchsia-400
+                        to-cyan-400
+                        bg-clip-text
+                        text-transparent
+                    ">
+                        Workforce
+                    </span>
+
+                </h2>
+                <p class="
+                    mt-5
+                    sm:mt-6
+                    text-sm
+                    sm:text-base
+                    lg:text-lg
+                    text-gray-400
+                    leading-7
+                    sm:leading-8
+                    max-w-xl
+                ">
+                    Workora helps organizations identify employee burnout
+                    risks and potential attrition using data-driven insights
+                    and machine learning.
+
+                </p>
+                <!-- RESPONSIVE BUTTONS -->
+                <div class="
+                    flex
+                    flex-col
+                    sm:flex-row
+                    gap-3
+                    sm:gap-4
+                    mt-7
+                    sm:mt-8
+                ">
+                    <button class="
+                        w-full
+                        sm:w-auto
+                        px-6
+                        py-3
+                        sm:py-3.5
+                        rounded-xl
+                        bg-gradient-to-r
+                        from-purple-600
+                        to-indigo-600
+                        hover:from-purple-500
+                        hover:to-indigo-500
+                        transition
+                        font-semibold
+                        text-sm
+                        sm:text-base
+                        shadow-xl
+                        shadow-purple-900/30
+                    ">
+                        Explore Insights
+                    </button>
+                    <button class="
+                        w-full
+                        sm:w-auto
+                        px-6
+                        py-3
+                        sm:py-3.5
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-white/5
+                        hover:bg-white/10
+                        transition
+                        font-medium
+                        text-sm
+                        sm:text-base
+                    ">
+                        Learn More →
+                    </button>
+
+                </div>
+                <!-- RESPONSIVE STATS -->
+                <div class="
+                    mt-8
+                    sm:mt-10
+                    grid
+                    grid-cols-3
+                    gap-3
+                    sm:flex
+                    sm:flex-wrap
+                    sm:gap-8
+                    text-center
+                    sm:text-left
+                ">
+                    <div>
+                        <p class="text-xl sm:text-2xl font-bold">
+                            AI
+                        </p>
+
+                        <p class="text-[10px] sm:text-sm text-gray-500 mt-1">
+                            Driven Analysis
+                        </p>
+                    </div>
+                    <div class="hidden sm:block w-px bg-white/10"></div>
+                    <div>
+                        <p class="text-xl sm:text-2xl font-bold">
+                            360°
+                        </p>
+                        <p class="text-[10px] sm:text-sm text-gray-500 mt-1">
+                            Workforce View
+                        </p>
+                    </div>
+                    <div class="hidden sm:block w-px bg-white/10"></div>
+                    <div>
+                        <p class="text-xl sm:text-2xl font-bold">
+                            Data
+                        </p>
+
+                        <p class="text-[10px] sm:text-sm text-gray-500 mt-1">
+                            Based Decisions
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- DASHBOARD PREVIEW-->
+            <div class="
+                relative
+                w-full
+                mt-2
+                lg:mt-0
+            ">
+                <div class="
+                    absolute
+                    inset-0
+                    bg-gradient-to-r
+                    from-purple-600/20
+                    to-cyan-500/20
+                    blur-3xl
+                "></div>
+                <div class="
+                    relative
+                    rounded-2xl
+                    sm:rounded-3xl
+                    border
+                    border-white/10
+                    bg-[#0c1829]/90
+                    backdrop-blur-xl
+                    p-4
+                    sm:p-6
+                    lg:p-7
+                    shadow-2xl
+                ">
+                    <div class="
+                        flex
+                        justify-between
+                        items-center
+                        mb-5
+                        sm:mb-6
+                    ">
+                        <div>
+                            <p class="text-xs sm:text-sm text-gray-400">
+                                Workforce Overview
+                            </p>
+
+                            <h3 class="
+                                text-lg
+                                sm:text-xl
+                                font-semibold
+                                mt-1
+                            ">
+                                Employee Insights
+                            </h3>
+                        </div>
+                        <div class="
+                            w-9
+                            h-9
+                            sm:w-10
+                            sm:h-10
+                            rounded-lg
+                            bg-purple-500/10
+                            flex
+                            items-center
+                            justify-center
+                        ">
+                            📊
+                        </div>
+
+                    </div>
+                    <!-- DASHBOARD CARDS -->
+                    <div class="
+                        grid
+                        grid-cols-1
+                        xs:grid-cols-2
+                        sm:grid-cols-2
+                        gap-3
+                        sm:gap-4
+                    ">
+                        <div class="
+                            rounded-xl
+                            sm:rounded-2xl
+                            bg-white/[0.04]
+                            border
+                            border-white/10
+                            p-4
+                            sm:p-5
+                        ">
+                            <p class="text-[11px] sm:text-xs text-gray-500">
+                                Employees
+                            </p>
+
+                            <p class="text-2xl sm:text-3xl font-bold mt-2">
+                                1,248
+                            </p>
+                            <p class="text-[10px] sm:text-xs text-cyan-400 mt-2">
+                                +8.4% this year
+                            </p>
+                        </div>
+                        <div class="
+                            rounded-xl
+                            sm:rounded-2xl
+                            bg-white/[0.04]
+                            border
+                            border-white/10
+                            p-4
+                            sm:p-5
+                        ">
+                            <p class="text-[11px] sm:text-xs text-gray-500">
+                                Avg. Workload
+                            </p>
+
+                            <p class="text-2xl sm:text-3xl font-bold mt-2">
+                                68%
+                            </p>
+
+                            <p class="text-[10px] sm:text-xs text-yellow-400 mt-2">
+                                Needs attention
+                            </p>
+
+                        </div>
+                        <div class="
+                            rounded-xl
+                            sm:rounded-2xl
+                            bg-white/[0.04]
+                            border
+                            border-white/10
+                            p-4
+                            sm:p-5
+                        ">
+                            <p class="text-[11px] sm:text-xs text-gray-500">
+                                Burnout Risk
+                            </p>
+
+                            <p class="text-2xl sm:text-3xl font-bold mt-2">
+                                24%
+                            </p>
+
+                            <p class="text-[10px] sm:text-xs text-orange-400 mt-2">
+                                Moderate risk
+                            </p>
+
+                        </div>
+                        <div class="
+                            rounded-xl
+                            sm:rounded-2xl
+                            bg-white/[0.04]
+                            border
+                            border-white/10
+                            p-4
+                            sm:p-5
+                        ">
+                            <p class="text-[11px] sm:text-xs text-gray-500">
+                                Retention
+                            </p>
+
+                            <p class="text-2xl sm:text-3xl font-bold mt-2">
+                                87%
+                            </p>
+
+                            <p class="text-[10px] sm:text-xs text-green-400 mt-2">
+                                Healthy
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CHART -->
+                    <div class="
+                        mt-4
+                        sm:mt-5
+                        rounded-xl
+                        sm:rounded-2xl
+                        bg-white/[0.03]
+                        border
+                        border-white/10
+                        p-4
+                        sm:p-5
+                    ">
+                        <div class="
+                            flex
+                            flex-col
+                            xs:flex-row
+                            xs:justify-between
+                            gap-1
+                            mb-5
+                        ">
+                            <p class="text-xs sm:text-sm font-medium">
+                                Workforce Risk Trend
+                            </p>
+
+                            <span class="text-[10px] sm:text-xs text-gray-500">
+                                Last 6 months
+                            </span>
+
+                        </div>
+                        <div class="
+                            flex
+                            items-end
+                            gap-2
+                            sm:gap-3
+                            h-24
+                            sm:h-28
+                        ">
+                            <div class="flex-1 bg-purple-500/30 rounded-t-lg h-[45%]"></div>
+                            <div class="flex-1 bg-purple-500/40 rounded-t-lg h-[58%]"></div>
+                            <div class="flex-1 bg-purple-500/50 rounded-t-lg h-[52%]"></div>
+                            <div class="flex-1 bg-cyan-500/50 rounded-t-lg h-[70%]"></div>
+                            <div class="flex-1 bg-cyan-500/60 rounded-t-lg h-[61%]"></div>
+                            <div class="flex-1 bg-cyan-400/70 rounded-t-lg h-[48%]"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--INSIGHTS-->
+    <section id="insights" class="
+        border-y
+        border-white/10
+        bg-white/[0.02]
+    ">
+        <div class="
+            max-w-7xl
+            mx-auto
+            px-4
+            sm:px-6
+            lg:px-8
+            py-14
+            sm:py-20
+        ">
+            <div class="
+                text-center
+                max-w-2xl
+                mx-auto
+            ">
+                <p class="
+                    text-purple-400
+                    text-xs
+                    sm:text-sm
+                    font-semibold
+                    uppercase
+                    tracking-widest
+                ">
+                    Workforce Intelligence
+                </p>
+                <h2 class="
+                    text-2xl
+                    sm:text-3xl
+                    lg:text-4xl
+                    font-bold
+                    mt-3
+                ">
+                    Turn Employee Data Into Insights
+                </h2>
+                <p class="
+                    text-gray-400
+                    text-sm
+                    sm:text-base
+                    mt-4
+                    leading-7
+                ">
+                    Workora analyzes important workplace factors to help
+                    organizations understand workforce health and make
+                    informed decisions.
+                </p>
+
+            </div>
+            <!-- RESPONSIVE CARDS -->
+            <div class="
+                grid
+                grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+                gap-4
+                sm:gap-5
+                mt-9
+                sm:mt-12
+            ">
+                <div class="
+                    p-5
+                    sm:p-6
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-[#0c1829]/80
+                    hover:-translate-y-1
+                    hover:border-purple-400/30
+                    transition
+                ">
+                    <div class="
+                        w-11
+                        h-11
+                        sm:w-12
+                        sm:h-12
+                        rounded-xl
+                        bg-purple-500/10
+                        flex
+                        items-center
+                        justify-center
+                        text-xl
+                        sm:text-2xl
+                    ">
+                        🧠
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-semibold mt-5">
+                        Burnout Analysis
+                    </h3>
+
+                    <p class="
+                        text-gray-400
+                        text-xs
+                        sm:text-sm
+                        leading-6
+                        mt-3
+                    ">
+                        Analyze workload, working hours, satisfaction and
+                        other factors associated with employee burnout.
+                    </p>
+
+                </div>
+
+                <div class="
+                    p-5
+                    sm:p-6
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-[#0c1829]/80
+                    hover:-translate-y-1
+                    hover:border-cyan-400/30
+                    transition
+                ">
+
+                    <div class="
+                        w-11
+                        h-11
+                        sm:w-12
+                        sm:h-12
+                        rounded-xl
+                        bg-cyan-500/10
+                        flex
+                        items-center
+                        justify-center
+                        text-xl
+                        sm:text-2xl
+                    ">
+                        📈
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold mt-5">
+                        Attrition Insights
+                    </h3>
+                    <p class="
+                        text-gray-400
+                        text-xs
+                        sm:text-sm
+                        leading-6
+                        mt-3
+                    ">
+                        Identify workforce patterns that may indicate a
+                        higher likelihood of employee attrition.
+                    </p>
+
+                </div>
+                <div class="
+                    p-5
+                    sm:p-6
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-[#0c1829]/80
+                    hover:-translate-y-1
+                    hover:border-indigo-400/30
+                    transition
+                    sm:col-span-2
+                    lg:col-span-1
+                ">
+                    <div class="
+                        w-11
+                        h-11
+                        sm:w-12
+                        sm:h-12
+                        rounded-xl
+                        bg-indigo-500/10
+                        flex
+                        items-center
+                        justify-center
+                        text-xl
+                        sm:text-2xl
+                    ">
+                        🎯
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-semibold mt-5">
+                        Proactive Decisions
+                    </h3>
+                    <p class="
+                        text-gray-400
+                        text-xs
+                        sm:text-sm
+                        leading-6
+                        mt-3
+                    ">
+                        Help HR teams take proactive measures based on
+                        workforce data and predictive insights.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FACTORS -->
+    <section id="factors" class="
+        max-w-7xl
+        mx-auto
+        px-4
+        sm:px-6
+        lg:px-8
+        py-14
+        sm:py-20
+    ">
+        <div class="
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            gap-10
+            lg:gap-12
+            items-center
+        ">
+            <div>
+                <p class="
+                    text-cyan-400
+                    text-xs
+                    sm:text-sm
+                    font-semibold
+                    uppercase
+                    tracking-widest
+                ">
+                    Key Factors
+                </p>
+                <h2 class="
+                    text-2xl
+                    sm:text-3xl
+                    lg:text-4xl
+                    font-bold
+                    mt-3
+                ">
+                    What Influences Employee Wellbeing?
+                </h2>
+                <p class="
+                    text-gray-400
+                    text-sm
+                    sm:text-base
+                    mt-5
+                    leading-7
+                ">
+                    Workora considers multiple workplace indicators to
+                    understand patterns associated with employee burnout
+                    and attrition.
+                </p>
+
+            </div>
+            <!-- RESPONSIVE FACTOR GRID -->
+            <div class="
+                grid
+                grid-cols-1
+                sm:grid-cols-2
+                gap-3
+                sm:gap-4
+            ">
+                <div class="
+                    p-5
+                    rounded-2xl
+                    bg-white/[0.04]
+                    border
+                    border-white/10
+                ">
+                    <div class="text-2xl">
+                        ⏱️
+                    </div>
+
+                    <h3 class="font-semibold mt-3">
+                        Working Hours
+                    </h3>
+
+                    <p class="text-gray-500 text-xs sm:text-sm mt-2">
+                        Workload and extended working patterns.
+                    </p>
+
+                </div>
+                <div class="
+                    p-5
+                    rounded-2xl
+                    bg-white/[0.04]
+                    border
+                    border-white/10
+                ">
+                    <div class="text-2xl">
+                        ⚡
+                    </div>
+
+                    <h3 class="font-semibold mt-3">
+                        Work Pressure
+                    </h3>
+
+                    <p class="text-gray-500 text-xs sm:text-sm mt-2">
+                        Indicators of workplace stress and pressure.
+                    </p>
+
+                </div>
+                <div class="
+                    p-5
+                    rounded-2xl
+                    bg-white/[0.04]
+                    border
+                    border-white/10
+                ">
+                    <div class="text-2xl">
+                        ❤️
+                    </div>
+
+                    <h3 class="font-semibold mt-3">
+                        Job Satisfaction
+                    </h3>
+
+                    <p class="text-gray-500 text-xs sm:text-sm mt-2">
+                        Employee satisfaction and engagement levels.
+                    </p>
+
+                </div>
+                <div class="
+                    p-5
+                    rounded-2xl
+                    bg-white/[0.04]
+                    border
+                    border-white/10
+                ">
+                    <div class="text-2xl">
+                        👥
+                    </div>
+                    <h3 class="font-semibold mt-3">
+                        Work Environment
+                    </h3>
+                    <p class="text-gray-500 text-xs sm:text-sm mt-2">
+                        Workplace relationships and organizational support.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- HOW IT WORKS-->
+    <section id="process" class="
+        border-y
+        border-white/10
+        bg-[#091625]
+    ">
+        <div class="
+            max-w-7xl
+            mx-auto
+            px-4
+            sm:px-6
+            lg:px-8
+            py-14
+            sm:py-20
+        ">
+            <div class="text-center">
+
+                <p class="
+                    text-purple-400
+                    text-xs
+                    sm:text-sm
+                    font-semibold
+                    uppercase
+                    tracking-widest
+                ">
+                    Simple Process
+                </p>
+
+                <h2 class="
+                    text-2xl
+                    sm:text-3xl
+                    lg:text-4xl
+                    font-bold
+                    mt-3
+                ">
+                    How Workora Works
+                </h2>
+
+            </div>
+            <!-- RESPONSIVE PROCESS CARDS -->
+            <div class="
+                grid
+                grid-cols-1
+                md:grid-cols-3
+                gap-4
+                sm:gap-6
+                mt-9
+                sm:mt-12
+            ">
+
+                <div class="
+                    relative
+                    p-6
+                    sm:p-7
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                ">
+                    <span class="
+                        text-5xl
+                        font-extrabold
+                        text-white/5
+                        absolute
+                        right-5
+                        top-3
+                    ">
+                        01
+                    </span>
+
+                    <div class="
+                        w-10
+                        h-10
+                        rounded-lg
+                        bg-purple-500/20
+                        flex
+                        items-center
+                        justify-center
+                        font-bold
+                        text-purple-300
+                    ">
+                        1
+                    </div>
+                    <h3 class="text-lg font-semibold mt-5">
+                        Collect Data
+                    </h3>
+                    <p class="
+                        text-gray-400
+                        text-xs
+                        sm:text-sm
+                        leading-6
+                        mt-3
+                    ">
+                        Gather relevant employee and workplace information
+                        required for analysis.
+                    </p>
+
+                </div>
+                <div class="
+                    relative
+                    p-6
+                    sm:p-7
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                ">
+                    <span class="
+                        text-5xl
+                        font-extrabold
+                        text-white/5
+                        absolute
+                        right-5
+                        top-3
+                    ">
+                        02
+                    </span>
+
+                    <div class="
+                        w-10
+                        h-10
+                        rounded-lg
+                        bg-cyan-500/20
+                        flex
+                        items-center
+                        justify-center
+                        font-bold
+                        text-cyan-300
+                    ">
+                        2
+                    </div>
+
+                    <h3 class="text-lg font-semibold mt-5">
+                        Analyze Patterns
+                    </h3>
+
+                    <p class="
+                        text-gray-400
+                        text-xs
+                        sm:text-sm
+                        leading-6
+                        mt-3
+                    ">
+                        Machine learning models analyze workforce patterns
+                        and important employee factors.
+                    </p>
+
+                </div>
+                <div class="
+                    relative
+                    p-6
+                    sm:p-7
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                ">
+
+                    <span class="
+                        text-5xl
+                        font-extrabold
+                        text-white/5
+                        absolute
+                        right-5
+                        top-3
+                    ">
+                        03
+                    </span>
+
+                    <div class="
+                        w-10
+                        h-10
+                        rounded-lg
+                        bg-indigo-500/20
+                        flex
+                        items-center
+                        justify-center
+                        font-bold
+                        text-indigo-300
+                    ">
+                        3
+                    </div>
+
+                    <h3 class="text-lg font-semibold mt-5">
+                        Generate Insights
+                    </h3>
+
+                    <p class="
+                        text-gray-400
+                        text-xs
+                        sm:text-sm
+                        leading-6
+                        mt-3
+                    ">
+                        Present understandable insights that support
+                        better workforce management decisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--CTA -->
+    <section class="
+        max-w-7xl
+        mx-auto
+        px-4
+        sm:px-6
+        lg:px-8
+        py-14
+        sm:py-20
+    ">
+        <div class="
+            relative
+            overflow-hidden
+            rounded-2xl
+            sm:rounded-3xl
+            border
+            border-purple-400/20
+            bg-gradient-to-br
+            from-purple-900/40
+            via-[#111c32]
+            to-cyan-900/30
+            p-6
+            sm:p-10
+            lg:p-12
+            text-center
+        ">
+            <div class="
+                absolute
+                w-48
+                h-48
+                sm:w-60
+                sm:h-60
+                bg-purple-500/20
+                rounded-full
+                blur-3xl
+                -top-32
+                -left-20
+            "></div>
+            <div class="
+                absolute
+                w-48
+                h-48
+                sm:w-60
+                sm:h-60
+                bg-cyan-500/10
+                rounded-full
+                blur-3xl
+                -bottom-32
+                -right-20
+            "></div>
+            <div class="relative">
+
+                <p class="
+                    text-purple-300
+                    text-xs
+                    sm:text-sm
+                    font-semibold
+                    uppercase
+                    tracking-widest
+                ">
+                    Smarter Workforce Management
+                </p>
+                <h2 class="
+                    text-2xl
+                    sm:text-3xl
+                    lg:text-4xl
+                    font-bold
+                    mt-4
+                ">
+                    Build a Healthier, Stronger Workforce
+                </h2>
+                <p class="
+                    text-gray-400
+                    text-sm
+                    sm:text-base
+                    max-w-2xl
+                    mx-auto
+                    mt-4
+                    leading-7
+                ">
+                    Use data-driven workforce intelligence to understand
+                    employee wellbeing and support proactive HR decisions.
+                </p>
+                <button class="
+                    w-full
+                    sm:w-auto
+                    mt-7
+                    px-7
+                    py-3.5
+                    rounded-xl
+                    bg-white
+                    text-gray-900
+                    font-semibold
+                    hover:bg-gray-100
+                    transition
+                ">
+                    Get Started →
+                </button>
+            </div>
+        </div>
+    </section>
+    <!--FOOTER-->
+    <footer class="border-t border-white/10">
+
+        <div class="
+            max-w-7xl
+            mx-auto
+            px-4
+            sm:px-6
+            lg:px-8
+            py-7
+            sm:py-8
+        ">
+            <div class="
+                flex
+                flex-col
+                md:flex-row
+                justify-between
+                items-center
+                gap-4
+                text-center
+                md:text-left
+            ">
+                <div class="flex items-center gap-2">
+
+                    <div class="
+                        w-8
+                        h-8
+                        rounded-lg
+                        bg-gradient-to-br
+                        from-purple-500
+                        to-cyan-400
+                        flex
+                        items-center
+                        justify-center
+                        text-sm
+                        font-bold
+                    ">
+                        W
+                    </div>
+
+                    <span class="font-semibold">
+                        Workora
+                    </span>
+
+                </div>
+                <p class="
+                    text-gray-500
+                    text-xs
+                    sm:text-sm
+                ">
+                    Employee Burnout & Attrition Prediction System
+                </p>
+                <p class="text-gray-600 text-xs">
+                    © 2026 Workora
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
